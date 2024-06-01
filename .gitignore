@@ -1,3 +1,7 @@
+./Credential/*.json
+
+./Result/*.csv
+./Result/*.pdf
 
 # Environments
 __pycache__/
