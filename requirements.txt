@@ -1,0 +1,22 @@
+# ::::: How to create virtual environment by venv.
+# $ cd [project dir]
+# $ py -m venv VenvSummaryLounge
+# $ .\VenvSummaryLounge\Scripts\activate
+
+# ::::: Run command if deactivation
+# $ deactivate
+
+# ::::: Install library
+# $ pip install -r requiremnets.txt
+
+requests
+toml
+numpy
+pandas
+
+beautifulsoup4
+
+vertexai
+google-cloud-aiplatform
+
+# langchain
