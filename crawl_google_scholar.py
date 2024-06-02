@@ -2,20 +2,22 @@ import os
 import re
 import time
 
-import requests
 import pandas as pd
+import requests
+import toml
 from bs4 import BeautifulSoup
 
 class PaperCrawler:
     def __init__(self) -> None:
-        self.header_dict = { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" }
-        self.sleep_sec = 3
-        self.max_page_num = 9
+        with open("./config.toml","r",encoding="UTF-8") as f: self.conf=toml.load(f)
+
+        self.header_dict = { "User-Agent": self.conf["Crawler"]["UserAgent"]}
+        self.sleep_sec = self.conf["Crawler"]["IntervalSec"] 
+        self.max_page_num = self.conf["Crawler"]["MaxPageNum"] 
         self.pages_list= [page*10 for page in range(self.max_page_num)]
         self.paper_list_all_page = []
-        self.max_page_num = 10
         self.target_URL = ""
-
+        self.del_str_list = self.conf["Crawler"]["RemoveList"] 
 
     def run_pages(self, keyword_list, is_debug=False):
         for _page_num in self.pages_list:
@@ -47,7 +49,7 @@ class PaperCrawler:
         # 各論文ごとに処理
         for _n, _paper in enumerate(self.soup.select(".gs_ri")):
             title = _paper.select_one(".gs_rt").get_text()
-            title = title.replace("[PDF]","").replace("[HTML]","").replace("","")
+            for _delstr in self.del_str_list: title = title.replace(_delstr,"")
             if is_debug:print("title     :",title)
 
             tag_gs_a = _paper.select_one(".gs_a")
