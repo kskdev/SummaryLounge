@@ -10,11 +10,13 @@
 # $ pip install -r requiremnets.txt
 
 requests
+urllib3
 toml
 numpy
 pandas
 
 beautifulsoup4
+arxiv
 
 vertexai
 google-cloud-aiplatform

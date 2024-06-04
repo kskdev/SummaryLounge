@@ -26,3 +26,6 @@
 ## 参考
 LangChainの概要と使い方
 https://zenn.dev/umi_mori/books/prompt-engineer/viewer/langchain_overview
+
+Google Scholarでの クエリの投げ方
+https://github.com/sotetsuk/goscholar/issues/2

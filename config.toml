@@ -10,6 +10,7 @@ Author = "Kosumike"
 [GCPIAM]
 CredentialJson = "./Credential/phonic-bivouac_credential.json"
 
+
 [GCPGemini]
 ProjectID = "phonic-bivouac-301315" 
 RegionName= "asia-northeast1"
@@ -18,10 +19,12 @@ ModelName = "gemini-1.5-pro-001"
 
 [Crawler]
 UserAgent   = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-IntervalSec = 3
-MaxPageNum  = 3
+IntervalSec = 10
+MaxPageNum  = 4
 RemoveList  = ["[書籍][B]","[引用][C]","[PDF]","[HTML]"]
-
+UseProxy    = false
+ProxyHTTP   = "http://proxy.example.com:8080"
+ProxyHTTPS  = "https://proxy.example.com:8080"
 
 [SystemPrompt]
 OchiaiFormat = """
