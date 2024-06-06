@@ -9,8 +9,8 @@
 
 ## 現状対応
 - Google Scholar で 複数キーワードから論文を収集
-  - クエリの投げ方はまた考え直す
-  - パースが上手くいかずエラー終了する場合がある
+  - Selenium ベースでhtmlをローカルに保存・取得
+  - ローカルhtmlからパース連携処理はまだ.
 - PDF から日本語マークダウンサマリーを出力
 
 ## 予定
@@ -29,3 +29,7 @@ https://zenn.dev/umi_mori/books/prompt-engineer/viewer/langchain_overview
 
 Google Scholarでの クエリの投げ方
 https://github.com/sotetsuk/goscholar/issues/2
+
+ChromeDriverの場所
+https://qiita.com/Chronos/items/7f56898af25523d04598
+https://googlechromelabs.github.io/chrome-for-testing/

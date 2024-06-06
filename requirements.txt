@@ -11,6 +11,7 @@
 
 requests
 urllib3
+selenium
 toml
 numpy
 pandas

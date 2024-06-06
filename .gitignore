@@ -2,6 +2,8 @@ Credential/*.json
 
 Result/*.csv
 Result/*.pdf
+Result/*.html
+
 
 # Environments
 __pycache__/
